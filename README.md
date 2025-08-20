@@ -15,4 +15,4 @@ npm install
 npm run build
 
 # run
-npm serve
+npm start
