@@ -1,0 +1,29 @@
+{
+  "name": "orchard_frontend_test",
+  "version": "1.0.0",
+  "description": "Orchard Front End Test submitted by Marc Obfenda",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcobfenda/orchard_frontend_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcobfenda/orchard_frontend_test/issues"
+  },
+  "homepage": "https://github.com/marcobfenda/orchard_frontend_test#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.4",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
