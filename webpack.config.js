@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin"); // Add this line
 
 module.exports = {
   entry: "./src/index.js",
@@ -12,19 +14,27 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader"], // handles CSS imports
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/index.html", // HTML template
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+    }), // Makes jQuery $ and jQuery global
+    new CopyPlugin({
+      patterns: [
+        { 
+          from: "src/img", 
+          to: "img" 
+        },
+      ],
     }),
   ],
-  devServer: {
-    static: "./dist",
-    port: 3000,
-    open: true,
-  },
-  mode: "development", // switch to "production" for minified builds
+  mode: "production", // Production mode for minified builds
+  // Removed devServer since this is build-only
 };
